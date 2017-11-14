@@ -4,6 +4,7 @@
 #include <stdlib.h>
 
 #include "Camera.h"
+#include "CameraUtility.h"
 
 
 #define WINDOWNAME "Sample Application"
@@ -14,12 +15,12 @@ int H = 720;
 
 int F = 45;
 
-int P =   0;
-int Q = -85;
-int R =  10;
-int S =   0;
-int T =   0;
-int U =   0;
+int P =    0;
+int Q = -125;
+int R =   35;
+int S =    0;
+int T =    0;
+int U =    0;
 
 
 void display(void)
@@ -48,6 +49,8 @@ void display(void)
 		glVertex3f(0.0, (float)WIN_H, 0.0);
 		glEnd();
 
+		utvl::graphics::print();
+
 		c.disable();
 	}
 
@@ -65,11 +68,40 @@ void display(void)
 		glColor4f(0.5f, 0.2f, 0.2f, 0.0f);
 
 		glBegin(GL_POLYGON);
-		glVertex3f(-50.0, -50.0, 0.0);
-		glVertex3f(-50.0, 50.0, 0.0);
+		glVertex3f(0.0, 0.0, 0.0);
+		glVertex3f(0.0, 50.0, 0.0);
 		glVertex3f(50.0, 50.0, 0.0);
+		glVertex3f(50.0, 0.0, 0.0);
+		glEnd();
+
+		glColor4f(0.0f, 0.5f, 0.2f, 0.0f);
+
+		glBegin(GL_POLYGON);
+		glVertex3f(-50.0, 0.0, 0.0);
+		glVertex3f(-50.0, 50.0, 0.0);
+		glVertex3f(0.0, 50.0, 0.0);
+		glVertex3f(0.0, 0.0, 0.0);
+		glEnd();
+
+		glColor4f(0.2f, 0.2f, 0.5f, 0.0f);
+
+		glBegin(GL_POLYGON);
+		glVertex3f(0.0, -50.0, 0.0);
+		glVertex3f(0.0, 0.0, 0.0);
+		glVertex3f(50.0, 0.0, 0.0);
 		glVertex3f(50.0, -50.0, 0.0);
 		glEnd();
+
+		glColor4f(0.5f, 0.5f, 0.5f, 0.0f);
+
+		glBegin(GL_POLYGON);
+		glVertex3f(-50.0, -50.0, 0.0);
+		glVertex3f(-50.0, 0.0, 0.0);
+		glVertex3f(0.0, 0.0, 0.0);
+		glVertex3f(0.0, -50.0, 0.0);
+		glEnd();
+
+		utvl::graphics::print();
 
 		c.disable();
 

@@ -89,7 +89,18 @@ private:
 
 
 /*!
-@brief This class has same function as "gluPerspective + gluLookAt".
+@brief This class has same function as "gluPerspective x gluLookAt".
+
+gluLookAt
+\f[
+M_{mv}=
+  \begin{bmatrix}
+    r_{11} & r_{12} & r_{13} & t_{x} \\
+    r_{21} & r_{22} & r_{23} & t_{y} \\
+    r_{31} & r_{32} & r_{33} & t_{z} \\
+    0 & 0 & 0 & 1
+  \end{bmatrix}
+\f]
 */
 class CameraPerspective
 {

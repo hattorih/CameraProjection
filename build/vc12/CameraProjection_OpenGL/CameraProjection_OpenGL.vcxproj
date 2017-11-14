@@ -11,8 +11,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{E5AE27EB-4789-4D1F-B335-9C42CEAE7DB3}</ProjectGuid>
-    <RootNamespace>CameraProjection_OpenCV</RootNamespace>
+    <ProjectGuid>{E0029966-56BB-40A6-A73B-304DF259C2F6}</ProjectGuid>
+    <RootNamespace>CameraProjection_OpenGL</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
@@ -49,13 +49,12 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>..\..\..\include;..\..\..\src\3rdparty\opencv_2.4.7\include;..\..\..\src\3rdparty\vectormath_1.0.1\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\..\include;..\..\..\src\3rdparty\freeglut_2.8.1\include;..\..\..\src\3rdparty\vectormath_1.0.1\include</AdditionalIncludeDirectories>
       <ProgramDataBaseFileName>$(OutDir)$(ProjectName).pdb</ProgramDataBaseFileName>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>..\..\..\src\3rdparty\opencv_2.4.7\bin\vc9_x64_Release</AdditionalLibraryDirectories>
-      <AdditionalDependencies>opencv_core247.lib;opencv_imgproc247.lib;opencv_highgui247.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\..\src\3rdparty\freeglut_2.8.1\bin\vc12_x64_Relase;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -65,22 +64,24 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>..\..\..\include;..\..\..\src\3rdparty\opencv_2.4.7\include;..\..\..\src\3rdparty\vectormath_1.0.1\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\..\include;..\..\..\src\3rdparty\freeglut_2.8.1\include;..\..\..\src\3rdparty\vectormath_1.0.1\include</AdditionalIncludeDirectories>
       <ProgramDataBaseFileName>$(OutDir)$(ProjectName).pdb</ProgramDataBaseFileName>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalLibraryDirectories>..\..\..\src\3rdparty\opencv_2.4.7\bin\vc9_x64_Release</AdditionalLibraryDirectories>
-      <AdditionalDependencies>opencv_core247.lib;opencv_imgproc247.lib;opencv_highgui247.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\..\src\3rdparty\freeglut_2.8.1\bin\vc12_x64_Relase;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\src\sample\CameraProjection_OpenCV\main.cpp" />
+    <ClCompile Include="..\..\..\src\Camera.cpp" />
+    <ClCompile Include="..\..\..\src\CameraUtility.cpp" />
+    <ClCompile Include="..\..\..\src\sample\CameraProjection_OpenGL\main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\include\Camera.h" />
+    <ClInclude Include="..\..\..\include\CameraUtility.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
